@@ -29,6 +29,7 @@ public class TpAccept implements CommandExecutor {
         Player target = TpaCommand.playerHashMap.get(player);
         location = target.getLocation();
         target.sendMessage(Color.format(message.applyPlaceholder(target, player, Core.configuration.getConfig().getString("tpaccept_player"))));
+        player.sendMessage(Color.format(message.applyPlaceholder(target, player, Core.configuration.getConfig().getString("tpaccept_target"))));
         scheduler.scheduleSyncDelayedTask(Core.getInstance(), () -> {
             target.teleport(player.getLocation());
             TpaCommand.playerArrayList.add(TpaCommand.playerHashMap.get(player));
