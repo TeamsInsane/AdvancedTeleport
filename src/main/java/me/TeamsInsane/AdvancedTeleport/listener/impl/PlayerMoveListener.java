@@ -1,4 +1,4 @@
-package me.TeamsInsane.AdvancedTeleport.events;
+package me.TeamsInsane.AdvancedTeleport.listener.impl;
 
 import me.TeamsInsane.AdvancedTeleport.commands.impl.TpaCommand;
 import org.bukkit.Location;
@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-public class MoveEvent implements Listener {
+public class PlayerMoveListener implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent e) {

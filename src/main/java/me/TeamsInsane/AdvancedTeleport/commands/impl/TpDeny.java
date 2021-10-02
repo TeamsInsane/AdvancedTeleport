@@ -1,11 +1,9 @@
 package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
-import me.TeamsInsane.AdvancedTeleport.commands.impl.TpaCommand;
-import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
+import me.TeamsInsane.AdvancedTeleport.placeholder.Message;
 import me.TeamsInsane.AdvancedTeleport.utils.Color;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

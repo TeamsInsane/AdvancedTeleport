@@ -1,20 +1,19 @@
 package me.TeamsInsane.AdvancedTeleport;
 
 import me.TeamsInsane.AdvancedTeleport.commands.CommandRegisterable;
-import me.TeamsInsane.AdvancedTeleport.commands.impl.*;
-import me.TeamsInsane.AdvancedTeleport.events.DamageEvent;
-import me.TeamsInsane.AdvancedTeleport.events.MoveEvent;
+import me.TeamsInsane.AdvancedTeleport.listener.ListenerRegisterable;
+import me.TeamsInsane.AdvancedTeleport.listener.impl.EntityDamageListener;
+import me.TeamsInsane.AdvancedTeleport.listener.impl.PlayerMoveListener;
 import me.TeamsInsane.AdvancedTeleport.registry.Registerable;
 import me.TeamsInsane.AdvancedTeleport.utils.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
 import java.util.Set;
 
 public final class Core extends JavaPlugin {
 
     private static final Set<Registerable> REGISTERABLES = Set.of(
-        new CommandRegisterable()
+        new CommandRegisterable(), new ListenerRegisterable()
     );
 
     private static Core plugin;
@@ -24,8 +23,6 @@ public final class Core extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         System.out.println("The advanced tp plugin has been enabled!");
-        this.getServer().getPluginManager().registerEvents(new DamageEvent(), this);
-        this.getServer().getPluginManager().registerEvents(new MoveEvent(), this);
 
         REGISTERABLES.forEach(it -> it.register(this));
 
@@ -33,6 +30,7 @@ public final class Core extends JavaPlugin {
         configuration.saveConfig();
         configuration.reloadConfig();
     }
+
     public static Core getInstance(){
         return plugin;
     }

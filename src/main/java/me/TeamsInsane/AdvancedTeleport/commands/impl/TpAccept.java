@@ -1,7 +1,7 @@
 package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
-import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
+import me.TeamsInsane.AdvancedTeleport.placeholder.Message;
 import me.TeamsInsane.AdvancedTeleport.utils.Color;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
