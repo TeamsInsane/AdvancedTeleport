@@ -1,4 +1,4 @@
-package me.TeamsInsane.AdvancedTeleport.commands;
+package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
 import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
@@ -9,15 +9,19 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.jetbrains.annotations.NotNull;
 
-public class TpAccept implements CommandExecutor {
+public class TpAccept implements me.TeamsInsane.AdvancedTeleport.commands.Command {
     public static Location location;
     Message message = new Message();
+
+    @Override
+    public String getCommandName() {
+        return "tpaccept";
+    }
 
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         Player player = (Player) sender;

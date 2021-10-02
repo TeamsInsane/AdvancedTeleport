@@ -1,6 +1,6 @@
 package me.TeamsInsane.AdvancedTeleport.events;
 
-import me.TeamsInsane.AdvancedTeleport.commands.TpaCommand;
+import me.TeamsInsane.AdvancedTeleport.commands.impl.TpaCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

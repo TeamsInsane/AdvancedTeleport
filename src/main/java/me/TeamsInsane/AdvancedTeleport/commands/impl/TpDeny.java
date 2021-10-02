@@ -1,6 +1,7 @@
-package me.TeamsInsane.AdvancedTeleport.commands;
+package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
+import me.TeamsInsane.AdvancedTeleport.commands.impl.TpaCommand;
 import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
 import me.TeamsInsane.AdvancedTeleport.utils.Color;
 import org.bukkit.command.Command;
@@ -9,7 +10,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class TpDeny implements CommandExecutor {
+public class TpDeny implements me.TeamsInsane.AdvancedTeleport.commands.Command {
+
+    @Override
+    public String getCommandName() {
+        return "tpdeny";
+    }
+
     Message message = new Message();
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (!(sender instanceof Player)) return false;
