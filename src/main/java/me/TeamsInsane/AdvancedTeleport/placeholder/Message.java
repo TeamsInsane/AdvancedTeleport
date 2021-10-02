@@ -1,4 +1,4 @@
-package me.TeamsInsane.AdvancedTeleport.placeHolder;
+package me.TeamsInsane.AdvancedTeleport.placeholder;
 
 import org.bukkit.entity.Player;
 

@@ -1,4 +1,4 @@
-package me.TeamsInsane.AdvancedTeleport.events;
+package me.TeamsInsane.AdvancedTeleport.listener.impl;
 
 import me.TeamsInsane.AdvancedTeleport.commands.impl.TpaCommand;
 import org.bukkit.entity.Player;
@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-public class DamageEvent implements Listener {
+public class EntityDamageListener implements Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent e){
         Player player = (Player) e.getEntity();
