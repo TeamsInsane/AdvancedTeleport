@@ -1,4 +1,4 @@
-package me.TeamsInsane.AdvancedTeleport.commands;
+package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
 import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
@@ -13,9 +13,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TpaCommand implements CommandExecutor{
+public class TpaCommand implements me.TeamsInsane.AdvancedTeleport.commands.Command {
     public static final ArrayList<Player> playerArrayList = new ArrayList<>();
     public static final HashMap <Player, Player> playerHashMap = new HashMap<>();
+
+    @Override
+    public String getCommandName() {
+        return "tpa";
+    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
