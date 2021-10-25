@@ -1,13 +1,10 @@
 package me.TeamsInsane.AdvancedTeleport;
 
-import jdk.jfr.internal.Logger;
 import me.TeamsInsane.AdvancedTeleport.commands.CommandRegisterable;
 import me.TeamsInsane.AdvancedTeleport.commands.impl.TpToggle;
 import me.TeamsInsane.AdvancedTeleport.listener.ListenerRegisterable;
 import me.TeamsInsane.AdvancedTeleport.registry.Registerable;
 import me.TeamsInsane.AdvancedTeleport.utils.Configuration;
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Set;

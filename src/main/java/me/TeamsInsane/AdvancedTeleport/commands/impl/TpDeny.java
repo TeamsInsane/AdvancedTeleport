@@ -1,7 +1,7 @@
 package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
-import me.TeamsInsane.AdvancedTeleport.placeholder.Message;
+import me.TeamsInsane.AdvancedTeleport.placeHolder.Message;
 import me.TeamsInsane.AdvancedTeleport.utils.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
