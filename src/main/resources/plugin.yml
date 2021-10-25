@@ -2,6 +2,7 @@ name: AdvancedTeleport
 version: ${project.version}
 main: me.TeamsInsane.AdvancedTeleport.Core
 api-version: 1.17
+author: TeamsInsane
 commands:
   tpa:
     description: Teleports you to another player.
@@ -13,4 +14,5 @@ commands:
     description: Confirms the teleportation.
   tpback:
     description: Denies the teleportation.
-
+  tptoggle:
+    description: Toggles safe teleportation.
