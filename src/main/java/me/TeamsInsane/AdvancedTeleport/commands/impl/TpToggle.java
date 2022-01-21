@@ -2,7 +2,6 @@ package me.TeamsInsane.AdvancedTeleport.commands.impl;
 
 import me.TeamsInsane.AdvancedTeleport.Core;
 import me.TeamsInsane.AdvancedTeleport.utils.Color;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -12,30 +11,33 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class TpToggle implements me.TeamsInsane.AdvancedTeleport.commands.Command {
-    public static List<String> playerList = new ArrayList<>();
+
+    public static ArrayList<String> tpToggleList = new ArrayList<>();
 
     @Override
-    public String getCommandName() {return "tptoggle";}
+    public String getCommandName(){ return "tptoggle";}
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, org.bukkit.command.@NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!(sender instanceof Player)) return false;
         Player player = (Player) sender;
-        if (playerList.contains(player.getName())){
-            playerList.remove(player.getName());
-            player.sendMessage(Color.format(Core.configuration.getConfig().getString("tp_toggle_on")));
+        if (!player.hasPermission(Core.configuration.getConfig().getString("tp_toggle_perm"))){
+            player.sendMessage(Color.format(Core.configuration.getConfig().getString("no_permission")));
+            return false;
         }
-        else{
-            playerList.add(player.getName());
+        if (tpToggleList.contains(player.getName())){
+            tpToggleList.remove(player.getName());
+            player.sendMessage(Color.format(Core.configuration.getConfig().getString("tp_toggle_on")));
+        } else {
+            tpToggleList.add(player.getName());
             player.sendMessage(Color.format(Core.configuration.getConfig().getString("tp_toggle_off")));
         }
-        Core.configuration.getConfig().set("tp_toggle_list", playerList);
+        Core.configuration.getConfig().set("tp_toggle_list", tpToggleList);
         Core.configuration.saveConfig();
         saveDataToFile(Core.getInstance());
-        return true;
+        return false;
     }
 
     public void saveDataToFile(final Core plugin){
@@ -43,11 +45,10 @@ public class TpToggle implements me.TeamsInsane.AdvancedTeleport.commands.Comman
             final File file = new File(plugin.getDataFolder(), "config.yml");
             if (!file.exists()) file.createNewFile();
             final FileConfiguration configuration = YamlConfiguration.loadConfiguration(file);
-            configuration.set("tp_toggle_list", playerList);
+            configuration.set("safe_tp_toggle_list", tpToggleList);
             configuration.save(file);
         }catch (final IOException ex){
             ex.printStackTrace();
         }
-
     }
 }

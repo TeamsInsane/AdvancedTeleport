@@ -40,6 +40,11 @@ public class TpaCommand implements me.TeamsInsane.AdvancedTeleport.commands.Comm
             player.sendMessage(Color.format(Core.configuration.getConfig().getString("cooldown_after_tp")));
             return false;
         }
+        if (TpToggle.tpToggleList.contains(target.getName())){
+            player.sendMessage(Color.format(Core.configuration.getConfig().getString("tp_toggle_player_message")));
+            return false;
+        }
+
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         player.sendMessage(Color.format(message.applyPlaceholder(player, target, Objects.requireNonNull(Core.configuration.getConfig().getString("tpa_request_player")))));
         target.sendMessage(Color.format(message.applyPlaceholder(player, target, Objects.requireNonNull(Core.configuration.getConfig().getString("tpa_request_target")))));

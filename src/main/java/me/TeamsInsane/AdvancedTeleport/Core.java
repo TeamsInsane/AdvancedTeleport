@@ -1,6 +1,7 @@
 package me.TeamsInsane.AdvancedTeleport;
 
 import me.TeamsInsane.AdvancedTeleport.commands.CommandRegisterable;
+import me.TeamsInsane.AdvancedTeleport.commands.impl.SafeTpToggle;
 import me.TeamsInsane.AdvancedTeleport.commands.impl.TpToggle;
 import me.TeamsInsane.AdvancedTeleport.listener.ListenerRegisterable;
 import me.TeamsInsane.AdvancedTeleport.registry.Registerable;
@@ -23,12 +24,12 @@ public final class Core extends JavaPlugin {
         configuration = new Configuration(this);
         configuration.saveConfig();
         configuration.reloadConfig();
-        getLogger().info("Advanced Teleport plugin has been enabled!");
 
+        getLogger().info("Advanced Teleport plugin has been enabled!");
         plugin = this;
 
-        TpToggle.playerList.addAll(getConfig().getStringList("tp_toggle_list"));
-
+        SafeTpToggle.playerList.addAll(configuration.getConfig().getStringList("safe_tp_toggle_list"));
+        TpToggle.tpToggleList.addAll(configuration.getConfig().getStringList("tp_toggle_list"));
         REGISTERABLES.forEach(it -> it.register(this));
     }
 

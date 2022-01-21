@@ -1,5 +1,5 @@
+#Messages
 no_permission: '#<ff0000>Nimas dovoljenja za uporabo te komande!'
-skip_wait_perm: "tpa.skiptimer"
 cooldown_after_tp: "#<FFFF00>Pocakaj malo."
 player_not_found_error: "#<ff0000>Igralca ni na serverju."
 tpa_request_player: "#<FFFF00>Prosnja poslana igralcu#<ff0000> %target%#<FFFF00>."
@@ -17,7 +17,15 @@ tpback_message:  "Za zavrnitev teleportacije klikni na to sporocilo ali pa napis
 tpback_message_color: "RED"
 tpdeny_player: "#<ff0000>%target% #<FFFF00>te je zavrnil."
 tpdeny_target: "#<FFFF00>Prosnja zavrnjena."
-tp_toggle_off: "#<FFFF00>Izklopil si si varen tpa."
-tp_toggle_on: "#<FFFF00>Vklopil si si varen tpa."
+safe_tp_toggle_off: "#<FFFF00>Izklopil si si varen tpa."
+safe_tp_toggle_on: "#<FFFF00>Vklopil si si varen tpa."
 move_msg: "#<FFFF00>Teleportacija je bila prekinjena, saj si se premaknil!"
+tp_toggle_on: "#<FFFF00>Teleportacija vklopljena."
+tp_toggle_off: "#<FFFF00>Teleportacija izklopljena."
+tp_toggle_player_message: "#<FFFF00>Igralec ima izklopljeno teleportacijo!"
+#Permissions
+skip_wait_perm: "tpa.skiptimer"
+tp_toggle_perm: "tpa.tptoggle"
+#Lists
 tp_toggle_list:
+safe_tp_toggle_list:

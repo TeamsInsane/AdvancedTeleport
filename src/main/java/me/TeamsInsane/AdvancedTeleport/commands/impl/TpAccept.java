@@ -51,7 +51,7 @@ public class TpAccept implements me.TeamsInsane.AdvancedTeleport.commands.Comman
             target.sendMessage(Color.format(message.applyPlaceholder(target, player, Objects.requireNonNull(Core.configuration.getConfig().getString("tpaccept_player")))));
             target.teleport(player.getLocation());
             TpaCommand.playerArrayList.add(TpaCommand.playerHashMap.get(player));
-            if (!TpToggle.playerList.contains(target.getName())) {
+            if (!SafeTpToggle.playerList.contains(target.getName())) {
                 TextComponent yes = new TextComponent();
                 yes.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpconfirm"));
                 yes.setText(Color.format(Core.configuration.getConfig().getString("tpconfirm_message")));

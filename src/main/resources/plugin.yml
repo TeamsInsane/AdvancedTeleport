@@ -14,5 +14,7 @@ commands:
     description: Confirms the teleportation.
   tpback:
     description: Denies the teleportation.
-  tptoggle:
+  safetptoggle:
     description: Toggles safe teleportation.
+  tptoggle:
+    description: Toggles tpa.
